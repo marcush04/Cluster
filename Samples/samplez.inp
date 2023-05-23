@@ -1,0 +1,62 @@
+proc1
+10
+proc11
+100
+proc111
+500
+*
+*
+proc112
+500
+*
+*
+proc12
+100
+proc121
+1000
+*
+*
+proc122
+500
+*
+*
+4
+1111
+11
+11111
+111
+imprimir_estructura_cluster
+imprimir_area_espera
+imprimir_procesadores_cluster
+app proc12 99 10 15
+imprimir_procesador pr
+ipro proc12
+app proc12 101 91 15
+app proc12 101 90 15
+ipc
+app proc121 1 100 10
+app proc121 2 50 7
+app proc121 3 500 10
+app proc121 4 100 10
+app proc121 5 100 7
+app proc121 6 150 10
+app proc121 7 150 10
+ipc
+avanzar_tiempo 7
+ipc
+baja_proceso_procesador proc121 3
+ipc
+app proc121 2 550 10
+ipc
+bpp proc121 1
+ipc
+app proc121 1 90 10
+ipc
+bpp proc121 2
+ipc
+at 3
+ipc
+app proc121 2 110 10
+app proc121 3 150 10
+ipc
+fin

@@ -1,0 +1,175 @@
+#imprimir_estructura_cluster
+(proc1(proc11(proc111  )(proc112  ))(proc12(proc121  )(proc122  )))
+#imprimir_area_espera
+11
+0 0
+111
+0 0
+1111
+0 0
+11111
+0 0
+#imprimir_procesadores_cluster
+proc1
+proc11
+proc111
+proc112
+proc12
+proc121
+proc122
+#app proc12 99
+#imprimir_procesador pr
+error: no existe procesador
+#ipro proc12
+0 99 10 15
+#app proc12 101
+error: no cabe proceso
+#app proc12 101
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+0 99 10 15
+10 101 90 15
+proc121
+proc122
+#app proc121 1
+#app proc121 2
+#app proc121 3
+#app proc121 4
+#app proc121 5
+#app proc121 6
+#app proc121 7
+error: no cabe proceso
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+0 99 10 15
+10 101 90 15
+proc121
+0 1 100 10
+100 2 50 7
+150 3 500 10
+650 4 100 10
+750 5 100 7
+850 6 150 10
+proc122
+#avanzar_tiempo 7
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+0 99 10 8
+10 101 90 8
+proc121
+0 1 100 3
+150 3 500 3
+650 4 100 3
+850 6 150 3
+proc122
+#baja_proceso_procesador proc121 3
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+0 99 10 8
+10 101 90 8
+proc121
+0 1 100 3
+650 4 100 3
+850 6 150 3
+proc122
+#app proc121 2
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+0 99 10 8
+10 101 90 8
+proc121
+0 1 100 3
+100 2 550 10
+650 4 100 3
+850 6 150 3
+proc122
+#bpp proc121 1
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+0 99 10 8
+10 101 90 8
+proc121
+100 2 550 10
+650 4 100 3
+850 6 150 3
+proc122
+#app proc121 1
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+0 99 10 8
+10 101 90 8
+proc121
+0 1 90 10
+100 2 550 10
+650 4 100 3
+850 6 150 3
+proc122
+#bpp proc121 2
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+0 99 10 8
+10 101 90 8
+proc121
+0 1 90 10
+650 4 100 3
+850 6 150 3
+proc122
+#at 3
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+0 99 10 5
+10 101 90 5
+proc121
+0 1 90 7
+proc122
+#app proc121 2
+#app proc121 3
+#ipc
+proc1
+proc11
+proc111
+proc112
+proc12
+0 99 10 5
+10 101 90 5
+proc121
+0 1 90 7
+90 2 110 10
+200 3 150 10
+proc122

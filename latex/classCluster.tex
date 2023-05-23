@@ -1,0 +1,671 @@
+\hypertarget{classCluster}{}\doxysection{Referencia de la Clase Cluster}
+\label{classCluster}\index{Cluster@{Cluster}}
+
+
+Representa un cluster.  
+
+
+
+
+{\ttfamily \#include $<$Cluster.\+hh$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCluster_aee7feb1d599d4c8fda6c3ee83e86ba81}{Cluster}} ()
+\begin{DoxyCompactList}\small\item\em Creadora por defecto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_a84f9daea57e2773ab5766ef82d2a1def}{configurar\+\_\+cluster}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa el cluster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_aedab4ad066cb32b6505bcc784c4025f4}{modificar\+\_\+cluster}} (const string \&identificador\+\_\+procesador)
+\begin{DoxyCompactList}\small\item\em Modifica una rama del cluster añadiéndole otra rama solo si el procesador existe, no tiene procesos en ejecución y no tiene procesadores auxiliares. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_a9a7730eb919839c971204ea68692876b}{alta\+\_\+proceso\+\_\+procesador}} (const string \&identificador\+\_\+procesador, \mbox{\hyperlink{classProceso}{Proceso}} proceso)
+\begin{DoxyCompactList}\small\item\em El proceso se ejecuta en el procesador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_a4ba722e407137beba8fd4733a0f803fd}{baja\+\_\+proceso\+\_\+procesador}} (const string \&identificador\+\_\+procesador, const int \&identificador\+\_\+proceso)
+\begin{DoxyCompactList}\small\item\em El proceso deja de ejecutarse en el procesador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_ab3d8f6f2a025aa7c2f3a5a86f6128962}{avanzar\+\_\+tiempo}} (const int \&tiempo)
+\begin{DoxyCompactList}\small\item\em Elimina los procesos activos que hayan acabado en un intervalo de tiempo (tiempo) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_a0cd76c9e5d441abfdf33aba23d1b886e}{compactar\+\_\+memoria\+\_\+procesador}} (const string \&identificador\+\_\+procesador)
+\begin{DoxyCompactList}\small\item\em Mueve todos los procesos hacia el principio de la memoria del procesador especificado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_a7b9ae511df4a6465f4e191df6564fd77}{compactar\+\_\+memoria\+\_\+cluster}} ()
+\begin{DoxyCompactList}\small\item\em Mueve todos los procesos hacia el principio de la memoria de todos los procesadores del cluster. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCluster_a8f4171862f636e6e0de185aa8e2bc554}{agujero\+\_\+ajustado}} (\mbox{\hyperlink{classProceso}{Proceso}} \&proceso) const
+\begin{DoxyCompactList}\small\item\em Consultora del identificador del procesador en que se tendra que colocar el proceso, si no existe será \char`\"{}-\/1\char`\"{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCluster_ad20e465fd643b8ef9f7590cb41c7223e}{existe\+\_\+procesador}} (const string \&identificador\+\_\+procesador) const
+\begin{DoxyCompactList}\small\item\em Consultora que indica si existe un procesador en el cluster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_a2880bfa357178c0b955712c78af4182f}{imprimir\+\_\+arbol}} () const
+\begin{DoxyCompactList}\small\item\em Escribe la estructura del cluster. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_add20fb9714d501be0739a952cfe9321e}{imprimir\+\_\+procesador}} (const string \&identificador\+\_\+procesador) const
+\begin{DoxyCompactList}\small\item\em Escribe los procesos del procesador. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCluster_a9436d5be8c89c3c09e69b2ccebc7cff0}{imprimir\+\_\+procesadores\+\_\+cluster}} () const
+\begin{DoxyCompactList}\small\item\em Escribe los procesos de todos los procesadores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos privados estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classCluster_af59afef7dd246969de7a3eb585f48f4a}{leer\+\_\+arbol}} (Bin\+Tree$<$ string $>$ \&a, map$<$ string, \mbox{\hyperlink{classProcesador}{Procesador}} $>$ \&p)
+\begin{DoxyCompactList}\small\item\em Inicializa la estructura del cluster. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classCluster_a754c4e4e7ce6eb26d3ff9fa2260a6e7e}{grapar}} (const string \&identificador\+\_\+procesador, Bin\+Tree$<$ string $>$ \&arbol\+\_\+previo, Bin\+Tree$<$ string $>$ \&arbol\+\_\+grapar)
+\begin{DoxyCompactList}\small\item\em Consultora que indica si el procesador no tiene auxiliares y si es el caso junta la estructura del cluster antiguo con el nuevo. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classCluster_a296888653e20d5c144c44924444b6db4}{imprimir\+\_\+arbol\+\_\+i}} (const Bin\+Tree$<$ string $>$ \&a)
+\begin{DoxyCompactList}\small\item\em Escribe la estructura del cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+Bin\+Tree$<$ string $>$ \mbox{\hyperlink{classCluster_a4cd3cbb3cbde720c07333f5d5c0aca3b}{estructura\+\_\+procesadores}}
+\begin{DoxyCompactList}\small\item\em Árbol con la estructura de los procesadores. \end{DoxyCompactList}\item 
+map$<$ string, \mbox{\hyperlink{classProcesador}{Procesador}} $>$ \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}
+\begin{DoxyCompactList}\small\item\em Mapa ordenado de los procesadores según su identificador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un cluster. 
+
+Dispone de una serie de procesadores ubicados en forma de árbol y un tiempo pasivo. 
+
+Definición en la línea 23 del archivo Cluster.\+hh.
+
+
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classCluster_aee7feb1d599d4c8fda6c3ee83e86ba81}\label{classCluster_aee7feb1d599d4c8fda6c3ee83e86ba81}} 
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{Cluster()}{Cluster()}}
+{\footnotesize\ttfamily Cluster\+::\+Cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creadora por defecto. 
+
+Se ejecuta automáticamente al declarar un cluster. \begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es un cluster no inicializado 
+\end{DoxyPostcond}
+
+
+Definición en la línea 3 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classCluster_a8f4171862f636e6e0de185aa8e2bc554}\label{classCluster_a8f4171862f636e6e0de185aa8e2bc554}} 
+\index{Cluster@{Cluster}!agujero\_ajustado@{agujero\_ajustado}}
+\index{agujero\_ajustado@{agujero\_ajustado}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{agujero\_ajustado()}{agujero\_ajustado()}}
+{\footnotesize\ttfamily string Cluster\+::agujero\+\_\+ajustado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProceso}{Proceso}} \&}]{proceso }\end{DoxyParamCaption}) const}
+
+
+
+Consultora del identificador del procesador en que se tendra que colocar el proceso, si no existe será \char`\"{}-\/1\char`\"{}. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es el identificador del procesador del parámetro implícito donde se tendrá que colocar el proceso, si no existe será \char`\"{}-\/1\char`\"{} 
+\end{DoxyPostcond}
+
+
+Definición en la línea 123 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123                                                       \{}
+\DoxyCodeLine{124     map<string, Procesador>::const\_iterator it = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.begin();}
+\DoxyCodeLine{125     queue<BinTree<string>> cola;}
+\DoxyCodeLine{126     cola.push(\mbox{\hyperlink{classCluster_a4cd3cbb3cbde720c07333f5d5c0aca3b}{estructura\_procesadores}});}
+\DoxyCodeLine{127         }
+\DoxyCodeLine{128     \textcolor{keywordtype}{string} id\_procesador\_temp = \textcolor{stringliteral}{"{}0"{}};}
+\DoxyCodeLine{129     \textcolor{keywordtype}{int} agujero\_min = -\/1;}
+\DoxyCodeLine{130     \textcolor{keywordtype}{bool} primera = \textcolor{keyword}{true};}
+\DoxyCodeLine{131     }
+\DoxyCodeLine{132     \textcolor{comment}{//mientras queden procesadores}}
+\DoxyCodeLine{133     \textcolor{keywordflow}{while} (not cola.empty()) \{}
+\DoxyCodeLine{134         \textcolor{comment}{//copia el arbol}}
+\DoxyCodeLine{135         BinTree<string> arbol(cola.front());}
+\DoxyCodeLine{136         map <string, Procesador>::const\_iterator it2 = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.find(arbol.value());}
+\DoxyCodeLine{137         \textcolor{keywordtype}{int} agujero = it2-\/>second.revisar\_agujeros(proceso.\mbox{\hyperlink{classProceso_ac748e5053b83097f4071e007737b457a}{memoria\_ocupada}}());}
+\DoxyCodeLine{138        }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140         \textcolor{keywordflow}{if}(not arbol.left().empty()) cola.push(arbol.left());}
+\DoxyCodeLine{141         \textcolor{keywordflow}{if}(not arbol.right().empty()) cola.push(arbol.right());}
+\DoxyCodeLine{142         }
+\DoxyCodeLine{143         \textcolor{comment}{//si cabe y no contiene ese proceso comprueba si es el mas ajustado}}
+\DoxyCodeLine{144         \textcolor{keywordflow}{if}(agujero != -\/1 and not it2-\/>second.contiene\_proceso(proceso.\mbox{\hyperlink{classProceso_aceda0656281a2f00daa9d3c79c1e2957}{identificador\_del\_proceso}}())) \{}
+\DoxyCodeLine{145             \textcolor{comment}{//si es el primero que encuentra o tiene un agujero más ajustado que el anterior lo cambia }}
+\DoxyCodeLine{146             \textcolor{keywordflow}{if}(primera or agujero < agujero\_min) \{}
+\DoxyCodeLine{147                 id\_procesador\_temp = it2-\/>first;}
+\DoxyCodeLine{148                 agujero\_min = agujero;}
+\DoxyCodeLine{149                 it = it2;}
+\DoxyCodeLine{150                 primera = \textcolor{keyword}{false};}
+\DoxyCodeLine{151             \}}
+\DoxyCodeLine{152             \textcolor{comment}{//si tiene el mismo tamaño comprueba la cantidad memoria restante }}
+\DoxyCodeLine{153             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((agujero == agujero\_min) and (it2-\/>second.cantidad\_memoria\_libre() > it-\/>second.cantidad\_memoria\_libre())) \{}
+\DoxyCodeLine{154                 id\_procesador\_temp = it2-\/>first;}
+\DoxyCodeLine{155             \}}
+\DoxyCodeLine{156         \}}
+\DoxyCodeLine{157         cola.pop();}
+\DoxyCodeLine{158     \}}
+\DoxyCodeLine{159     \textcolor{keywordflow}{if} (agujero\_min != -\/1) \{}
+\DoxyCodeLine{160         \textcolor{keywordflow}{return} id\_procesador\_temp;}
+\DoxyCodeLine{161     \} }
+\DoxyCodeLine{162     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{stringliteral}{"{}-\/1"{}};}
+\DoxyCodeLine{163 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a9a7730eb919839c971204ea68692876b}\label{classCluster_a9a7730eb919839c971204ea68692876b}} 
+\index{Cluster@{Cluster}!alta\_proceso\_procesador@{alta\_proceso\_procesador}}
+\index{alta\_proceso\_procesador@{alta\_proceso\_procesador}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{alta\_proceso\_procesador()}{alta\_proceso\_procesador()}}
+{\footnotesize\ttfamily void Cluster\+::alta\+\_\+proceso\+\_\+procesador (\begin{DoxyParamCaption}\item[{const string \&}]{identificador\+\_\+procesador,  }\item[{\mbox{\hyperlink{classProceso}{Proceso}}}]{proceso }\end{DoxyParamCaption})}
+
+
+
+El proceso se ejecuta en el procesador. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El proceso pasa a ejecutarse en el procesador 
+\end{DoxyPostcond}
+
+
+Definición en la línea 73 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{73                                                                                              \{}
+\DoxyCodeLine{74     map<string, Procesador>::iterator it = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.find(identificador\_procesador);}
+\DoxyCodeLine{75     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.end()) \{}
+\DoxyCodeLine{76         \textcolor{keywordflow}{if}(it-\/>second.contiene\_proceso(proceso.\mbox{\hyperlink{classProceso_aceda0656281a2f00daa9d3c79c1e2957}{identificador\_del\_proceso}}())) \{}
+\DoxyCodeLine{77             cout << \textcolor{stringliteral}{"{}error: ya existe proceso"{}} << endl;}
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{79         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{80             it-\/>second.agregar\_proceso\_activo(proceso);}
+\DoxyCodeLine{81         \} }
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}error: no existe procesador"{}} << endl;}
+\DoxyCodeLine{84 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_ab3d8f6f2a025aa7c2f3a5a86f6128962}\label{classCluster_ab3d8f6f2a025aa7c2f3a5a86f6128962}} 
+\index{Cluster@{Cluster}!avanzar\_tiempo@{avanzar\_tiempo}}
+\index{avanzar\_tiempo@{avanzar\_tiempo}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{avanzar\_tiempo()}{avanzar\_tiempo()}}
+{\footnotesize\ttfamily void Cluster\+::avanzar\+\_\+tiempo (\begin{DoxyParamCaption}\item[{const int \&}]{tiempo }\end{DoxyParamCaption})}
+
+
+
+Elimina los procesos activos que hayan acabado en un intervalo de tiempo (tiempo) 
+
+\begin{DoxyPrecond}{Precondición}
+t es un entero no negativo 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Elimina los procesos activos del parámetro implícito que hayan acabado en un tiempo(tiempo) 
+\end{DoxyPostcond}
+
+
+Definición en la línea 97 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{97                                               \{}
+\DoxyCodeLine{98     map<string, Procesador>::iterator it = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.begin();}
+\DoxyCodeLine{99     \textcolor{keywordflow}{while} (it != \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.end()) \{}
+\DoxyCodeLine{100         it-\/>second.elimina\_proceso\_activo\_tiempo(tiempo);}
+\DoxyCodeLine{101         ++it;}
+\DoxyCodeLine{102     \}}
+\DoxyCodeLine{103 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a4ba722e407137beba8fd4733a0f803fd}\label{classCluster_a4ba722e407137beba8fd4733a0f803fd}} 
+\index{Cluster@{Cluster}!baja\_proceso\_procesador@{baja\_proceso\_procesador}}
+\index{baja\_proceso\_procesador@{baja\_proceso\_procesador}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{baja\_proceso\_procesador()}{baja\_proceso\_procesador()}}
+{\footnotesize\ttfamily void Cluster\+::baja\+\_\+proceso\+\_\+procesador (\begin{DoxyParamCaption}\item[{const string \&}]{identificador\+\_\+procesador,  }\item[{const int \&}]{identificador\+\_\+proceso }\end{DoxyParamCaption})}
+
+
+
+El proceso deja de ejecutarse en el procesador. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El proceso deja de ejecutarse en el procesador 
+\end{DoxyPostcond}
+
+
+Definición en la línea 86 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86                                                                                                               \{}
+\DoxyCodeLine{87     map<string, Procesador>::iterator it = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.find(identificador\_procesador);}
+\DoxyCodeLine{88     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.end()) \{}
+\DoxyCodeLine{89         \textcolor{keywordflow}{if}(it-\/>second.contiene\_proceso(identificador\_proceso)) \{}
+\DoxyCodeLine{90             it-\/>second.elimina\_proceso\_activo\_directo(identificador\_proceso);}
+\DoxyCodeLine{91         \}}
+\DoxyCodeLine{92         \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}error: no existe proceso"{}} << endl;}
+\DoxyCodeLine{93     \}}
+\DoxyCodeLine{94     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}error: no existe procesador"{}} << endl;}
+\DoxyCodeLine{95 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a7b9ae511df4a6465f4e191df6564fd77}\label{classCluster_a7b9ae511df4a6465f4e191df6564fd77}} 
+\index{Cluster@{Cluster}!compactar\_memoria\_cluster@{compactar\_memoria\_cluster}}
+\index{compactar\_memoria\_cluster@{compactar\_memoria\_cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{compactar\_memoria\_cluster()}{compactar\_memoria\_cluster()}}
+{\footnotesize\ttfamily void Cluster\+::compactar\+\_\+memoria\+\_\+cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mueve todos los procesos hacia el principio de la memoria de todos los procesadores del cluster. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Mueve todos los procesos hacia el principio de la memoria de todos los procesadores del parámetro implícito, sin dejar huecos, sin solaparse y respetando el orden inicial 
+\end{DoxyPostcond}
+
+
+Definición en la línea 113 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{113                                         \{}
+\DoxyCodeLine{114     map<string, Procesador>::iterator it = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.begin();}
+\DoxyCodeLine{115     \textcolor{keywordflow}{while} (it != \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.end()) \{}
+\DoxyCodeLine{116         \mbox{\hyperlink{classCluster_a0cd76c9e5d441abfdf33aba23d1b886e}{compactar\_memoria\_procesador}}(it-\/>first);}
+\DoxyCodeLine{117         ++it;}
+\DoxyCodeLine{118     \}}
+\DoxyCodeLine{119 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a0cd76c9e5d441abfdf33aba23d1b886e}\label{classCluster_a0cd76c9e5d441abfdf33aba23d1b886e}} 
+\index{Cluster@{Cluster}!compactar\_memoria\_procesador@{compactar\_memoria\_procesador}}
+\index{compactar\_memoria\_procesador@{compactar\_memoria\_procesador}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{compactar\_memoria\_procesador()}{compactar\_memoria\_procesador()}}
+{\footnotesize\ttfamily void Cluster\+::compactar\+\_\+memoria\+\_\+procesador (\begin{DoxyParamCaption}\item[{const string \&}]{identificador\+\_\+procesador }\end{DoxyParamCaption})}
+
+
+
+Mueve todos los procesos hacia el principio de la memoria del procesador especificado. 
+
+\begin{DoxyPrecond}{Precondición}
+El procesador existe 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Mueve todos los procesos hacia el principio de la memoria del procesador del parámetro implícito, sin dejar huecos, sin solaparse y respetando el orden inicial 
+\end{DoxyPostcond}
+
+
+Definición en la línea 105 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105                                                                                  \{}
+\DoxyCodeLine{106     \textcolor{keywordflow}{if}(\mbox{\hyperlink{classCluster_ad20e465fd643b8ef9f7590cb41c7223e}{existe\_procesador}}(identificador\_procesador)) \{}
+\DoxyCodeLine{107         map<string, Procesador>::iterator it = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.find(identificador\_procesador);}
+\DoxyCodeLine{108         it-\/>second.compactar();}
+\DoxyCodeLine{109     \}}
+\DoxyCodeLine{110     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}error: no existe procesador"{}} << endl;}
+\DoxyCodeLine{111 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a84f9daea57e2773ab5766ef82d2a1def}\label{classCluster_a84f9daea57e2773ab5766ef82d2a1def}} 
+\index{Cluster@{Cluster}!configurar\_cluster@{configurar\_cluster}}
+\index{configurar\_cluster@{configurar\_cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{configurar\_cluster()}{configurar\_cluster()}}
+{\footnotesize\ttfamily void Cluster\+::configurar\+\_\+cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inicializa el cluster. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito no está inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El parámetro implícito pasa a estar inicializado 
+\end{DoxyPostcond}
+
+
+Definición en la línea 21 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21                                  \{}
+\DoxyCodeLine{22     \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.clear();}
+\DoxyCodeLine{23     \mbox{\hyperlink{classCluster_af59afef7dd246969de7a3eb585f48f4a}{leer\_arbol}}(\mbox{\hyperlink{classCluster_a4cd3cbb3cbde720c07333f5d5c0aca3b}{estructura\_procesadores}}, \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}});}
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_ad20e465fd643b8ef9f7590cb41c7223e}\label{classCluster_ad20e465fd643b8ef9f7590cb41c7223e}} 
+\index{Cluster@{Cluster}!existe\_procesador@{existe\_procesador}}
+\index{existe\_procesador@{existe\_procesador}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{existe\_procesador()}{existe\_procesador()}}
+{\footnotesize\ttfamily bool Cluster\+::existe\+\_\+procesador (\begin{DoxyParamCaption}\item[{const string \&}]{identificador\+\_\+procesador }\end{DoxyParamCaption}) const}
+
+
+
+Consultora que indica si existe un procesador en el cluster. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado indica si el procesador existe en el parámetro implícito 
+\end{DoxyPostcond}
+
+
+Definición en la línea 165 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{165                                                                            \{}
+\DoxyCodeLine{166     map<string, Procesador>::const\_iterator it = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.find(identificador\_procesador);}
+\DoxyCodeLine{167     \textcolor{keywordflow}{if}(it != \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.end()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{168     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{169 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a754c4e4e7ce6eb26d3ff9fa2260a6e7e}\label{classCluster_a754c4e4e7ce6eb26d3ff9fa2260a6e7e}} 
+\index{Cluster@{Cluster}!grapar@{grapar}}
+\index{grapar@{grapar}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{grapar()}{grapar()}}
+{\footnotesize\ttfamily bool Cluster\+::grapar (\begin{DoxyParamCaption}\item[{const string \&}]{identificador\+\_\+procesador,  }\item[{Bin\+Tree$<$ string $>$ \&}]{arbol\+\_\+previo,  }\item[{Bin\+Tree$<$ string $>$ \&}]{arbol\+\_\+grapar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Consultora que indica si el procesador no tiene auxiliares y si es el caso junta la estructura del cluster antiguo con el nuevo. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Consultora que indica si el procesador del parámetro implícito no tiene auxiliares y si es el caso junta la estructura del parámetro implícito con el nuevo cluster 
+\end{DoxyPostcond}
+
+
+Definición en la línea 26 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26                                                                                                                          \{}
+\DoxyCodeLine{27     \textcolor{comment}{//Caso base}}
+\DoxyCodeLine{28     \textcolor{keywordflow}{if}(arbol\_previo.empty()) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{29     \textcolor{comment}{//Caso recursivo}}
+\DoxyCodeLine{30     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{31         BinTree<string>left = arbol\_previo.left();}
+\DoxyCodeLine{32         BinTree<string>right = arbol\_previo.right();}
+\DoxyCodeLine{33         \textcolor{comment}{//si lo encuentra comprueba si no tiene hijos}}
+\DoxyCodeLine{34         \textcolor{keywordflow}{if}(arbol\_previo.value() == identificador\_procesador) \{}
+\DoxyCodeLine{35             \textcolor{comment}{//si no tiene hijos añade el nuevo cluster}}
+\DoxyCodeLine{36             \textcolor{keywordflow}{if}(left.empty() and right.empty()) \{}
+\DoxyCodeLine{37                 arbol\_previo = arbol\_grapar;}
+\DoxyCodeLine{38                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{39             \}}
+\DoxyCodeLine{40             \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42         \textcolor{keywordtype}{bool} left\_bool = \mbox{\hyperlink{classCluster_a754c4e4e7ce6eb26d3ff9fa2260a6e7e}{grapar}}(identificador\_procesador, left, arbol\_grapar);}
+\DoxyCodeLine{43         \textcolor{keywordtype}{bool} right\_bool = \mbox{\hyperlink{classCluster_a754c4e4e7ce6eb26d3ff9fa2260a6e7e}{grapar}}(identificador\_procesador, right, arbol\_grapar);}
+\DoxyCodeLine{44         \textcolor{keywordtype}{string} \textcolor{keywordtype}{id} = arbol\_previo.value();}
+\DoxyCodeLine{45         arbol\_previo = BinTree<string>(\textcolor{keywordtype}{id}, left, right);}
+\DoxyCodeLine{46         \textcolor{keywordflow}{return} left\_bool and right\_bool;}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{49 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a2880bfa357178c0b955712c78af4182f}\label{classCluster_a2880bfa357178c0b955712c78af4182f}} 
+\index{Cluster@{Cluster}!imprimir\_arbol@{imprimir\_arbol}}
+\index{imprimir\_arbol@{imprimir\_arbol}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{imprimir\_arbol()}{imprimir\_arbol()}}
+{\footnotesize\ttfamily void Cluster\+::imprimir\+\_\+arbol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Escribe la estructura del cluster. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escribe la estructura del parámetro implícito 
+\end{DoxyPostcond}
+
+
+Definición en la línea 181 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{181                                   \{}
+\DoxyCodeLine{182     \mbox{\hyperlink{classCluster_a296888653e20d5c144c44924444b6db4}{imprimir\_arbol\_i}}(\mbox{\hyperlink{classCluster_a4cd3cbb3cbde720c07333f5d5c0aca3b}{estructura\_procesadores}});}
+\DoxyCodeLine{183     cout << endl;}
+\DoxyCodeLine{184 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a296888653e20d5c144c44924444b6db4}\label{classCluster_a296888653e20d5c144c44924444b6db4}} 
+\index{Cluster@{Cluster}!imprimir\_arbol\_i@{imprimir\_arbol\_i}}
+\index{imprimir\_arbol\_i@{imprimir\_arbol\_i}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{imprimir\_arbol\_i()}{imprimir\_arbol\_i()}}
+{\footnotesize\ttfamily void Cluster\+::imprimir\+\_\+arbol\+\_\+i (\begin{DoxyParamCaption}\item[{const Bin\+Tree$<$ string $>$ \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Escribe la estructura del cluster. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escribe la estructura del parámetro implícito 
+\end{DoxyPostcond}
+
+
+Definición en la línea 171 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{171                                                        \{}
+\DoxyCodeLine{172     \textcolor{keywordflow}{if} (not a.empty()) \{}
+\DoxyCodeLine{173         cout << \textcolor{stringliteral}{"{}("{}} << a.value();}
+\DoxyCodeLine{174         \mbox{\hyperlink{classCluster_a296888653e20d5c144c44924444b6db4}{imprimir\_arbol\_i}}(a.left());}
+\DoxyCodeLine{175         \mbox{\hyperlink{classCluster_a296888653e20d5c144c44924444b6db4}{imprimir\_arbol\_i}}(a.right());}
+\DoxyCodeLine{176         cout << \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{177     \}}
+\DoxyCodeLine{178     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{179 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_add20fb9714d501be0739a952cfe9321e}\label{classCluster_add20fb9714d501be0739a952cfe9321e}} 
+\index{Cluster@{Cluster}!imprimir\_procesador@{imprimir\_procesador}}
+\index{imprimir\_procesador@{imprimir\_procesador}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{imprimir\_procesador()}{imprimir\_procesador()}}
+{\footnotesize\ttfamily void Cluster\+::imprimir\+\_\+procesador (\begin{DoxyParamCaption}\item[{const string \&}]{identificador\+\_\+procesador }\end{DoxyParamCaption}) const}
+
+
+
+Escribe los procesos del procesador. 
+
+\begin{DoxyPrecond}{Precondición}
+El procesador existe en el parámetro implícito 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escribe los procesos de dicho procesador por orden creciente de primera posición de memoria, incluyendo dicha posición y el resto de datos de cada proceso 
+\end{DoxyPostcond}
+
+
+Definición en la línea 186 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{186                                                                              \{}
+\DoxyCodeLine{187     map<string, Procesador>::const\_iterator it = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.find(identificador\_procesador);}
+\DoxyCodeLine{188     \textcolor{keywordflow}{if}(not \mbox{\hyperlink{classCluster_ad20e465fd643b8ef9f7590cb41c7223e}{existe\_procesador}}(identificador\_procesador)) cout << \textcolor{stringliteral}{"{}error: no existe procesador"{}} << endl;}
+\DoxyCodeLine{189     \textcolor{keywordflow}{else} it-\/>second.imprimir\_procesador\_procesador();}
+\DoxyCodeLine{190 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_a9436d5be8c89c3c09e69b2ccebc7cff0}\label{classCluster_a9436d5be8c89c3c09e69b2ccebc7cff0}} 
+\index{Cluster@{Cluster}!imprimir\_procesadores\_cluster@{imprimir\_procesadores\_cluster}}
+\index{imprimir\_procesadores\_cluster@{imprimir\_procesadores\_cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{imprimir\_procesadores\_cluster()}{imprimir\_procesadores\_cluster()}}
+{\footnotesize\ttfamily void Cluster\+::imprimir\+\_\+procesadores\+\_\+cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Escribe los procesos de todos los procesadores. 
+
+\begin{DoxyPrecond}{Precondición}
+El procesador existe en el parámetro implícito 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Escribe los procesos de todos los procesadores del parámetro implícito por orden creciente de primera posición de memoria, incluyendo dicha posición y el resto de datos de cada proceso 
+\end{DoxyPostcond}
+
+
+Definición en la línea 192 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{192                                                  \{}
+\DoxyCodeLine{193     map<string, Procesador>::const\_iterator it = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.begin();}
+\DoxyCodeLine{194     \textcolor{keywordflow}{while} (it != \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.end()) \{}
+\DoxyCodeLine{195         cout << it-\/>first << endl;}
+\DoxyCodeLine{196         \mbox{\hyperlink{classCluster_add20fb9714d501be0739a952cfe9321e}{imprimir\_procesador}}(it-\/>first);}
+\DoxyCodeLine{197         ++it;}
+\DoxyCodeLine{198     \}}
+\DoxyCodeLine{199 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_af59afef7dd246969de7a3eb585f48f4a}\label{classCluster_af59afef7dd246969de7a3eb585f48f4a}} 
+\index{Cluster@{Cluster}!leer\_arbol@{leer\_arbol}}
+\index{leer\_arbol@{leer\_arbol}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{leer\_arbol()}{leer\_arbol()}}
+{\footnotesize\ttfamily void Cluster\+::leer\+\_\+arbol (\begin{DoxyParamCaption}\item[{Bin\+Tree$<$ string $>$ \&}]{a,  }\item[{map$<$ string, \mbox{\hyperlink{classProcesador}{Procesador}} $>$ \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Inicializa la estructura del cluster. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape Cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Inicializa la estructura del parámetro implícito 
+\end{DoxyPostcond}
+
+
+Definición en la línea 6 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6                                                                        \{}
+\DoxyCodeLine{7     \textcolor{keywordtype}{string} nom\_procesador;}
+\DoxyCodeLine{8     cin >> nom\_procesador;}
+\DoxyCodeLine{9     \textcolor{keywordflow}{if} (nom\_procesador != \textcolor{stringliteral}{"{}*"{}}) \{}
+\DoxyCodeLine{10        \mbox{\hyperlink{classProcesador}{Procesador}} procesador;}
+\DoxyCodeLine{11        procesador.\mbox{\hyperlink{classProcesador_a884e175aa30a2e8dccb5f806e4704ff6}{inicializar}}();}
+\DoxyCodeLine{12        BinTree<string> left;}
+\DoxyCodeLine{13        BinTree<string> right;}
+\DoxyCodeLine{14        \mbox{\hyperlink{classCluster_af59afef7dd246969de7a3eb585f48f4a}{leer\_arbol}}(left, p);}
+\DoxyCodeLine{15        \mbox{\hyperlink{classCluster_af59afef7dd246969de7a3eb585f48f4a}{leer\_arbol}}(right, p);}
+\DoxyCodeLine{16        a = BinTree<string>(nom\_procesador, left, right);}
+\DoxyCodeLine{17        p[nom\_procesador] = procesador;}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classCluster_aedab4ad066cb32b6505bcc784c4025f4}\label{classCluster_aedab4ad066cb32b6505bcc784c4025f4}} 
+\index{Cluster@{Cluster}!modificar\_cluster@{modificar\_cluster}}
+\index{modificar\_cluster@{modificar\_cluster}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{modificar\_cluster()}{modificar\_cluster()}}
+{\footnotesize\ttfamily void Cluster\+::modificar\+\_\+cluster (\begin{DoxyParamCaption}\item[{const string \&}]{identificador\+\_\+procesador }\end{DoxyParamCaption})}
+
+
+
+Modifica una rama del cluster añadiéndole otra rama solo si el procesador existe, no tiene procesos en ejecución y no tiene procesadores auxiliares. 
+
+\begin{DoxyPrecond}{Precondición}
+El parámetro implícito está inicializado 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El nuevo cluster se coloca en el lugar del procesador del parámetro implícito 
+\end{DoxyPostcond}
+
+
+Definición en la línea 51 del archivo Cluster.\+cc.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51                                                                      \{}
+\DoxyCodeLine{52     map<string, Procesador> procesador\_nuevo;}
+\DoxyCodeLine{53     BinTree<string> estructura\_procesadores\_nuevo;}
+\DoxyCodeLine{54     \textcolor{comment}{//leo el nuevo cluster}}
+\DoxyCodeLine{55     \mbox{\hyperlink{classCluster_af59afef7dd246969de7a3eb585f48f4a}{leer\_arbol}}(estructura\_procesadores\_nuevo, procesador\_nuevo);}
+\DoxyCodeLine{56     map<string, Procesador>::iterator it = \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.find(identificador\_procesador);}
+\DoxyCodeLine{57     \textcolor{comment}{//si existe el procesador comprueba que esta vacio}}
+\DoxyCodeLine{58     \textcolor{keywordflow}{if}(it  != \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.end()) \{}
+\DoxyCodeLine{59         \textcolor{comment}{//si esta vacio comprueba que no sea un procesador con auxiliares}}
+\DoxyCodeLine{60         \textcolor{keywordflow}{if} (not it-\/>second.procesador\_activo()) \{}
+\DoxyCodeLine{61             \textcolor{comment}{//si no es un procesador con auxiliares modifica el mapa con los nuevos procesadores}}
+\DoxyCodeLine{62             \textcolor{keywordflow}{if}(\mbox{\hyperlink{classCluster_a754c4e4e7ce6eb26d3ff9fa2260a6e7e}{grapar}}(identificador\_procesador, \mbox{\hyperlink{classCluster_a4cd3cbb3cbde720c07333f5d5c0aca3b}{estructura\_procesadores}}, estructura\_procesadores\_nuevo)) \{}
+\DoxyCodeLine{63                 \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.erase(it);}
+\DoxyCodeLine{64                 \mbox{\hyperlink{classCluster_a0456efea2e21cfeebda8f61669649a59}{procesadores}}.insert(procesador\_nuevo.begin(), procesador\_nuevo.end());}
+\DoxyCodeLine{65             \}}
+\DoxyCodeLine{66             \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}error: procesador con auxiliares"{}} << endl;}
+\DoxyCodeLine{67         \}}
+\DoxyCodeLine{68         \textcolor{keywordflow}{else}  cout << \textcolor{stringliteral}{"{}error: procesador con procesos"{}} << endl;}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}error: no existe procesador"{}} << endl;}
+\DoxyCodeLine{71 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{classCluster_a4cd3cbb3cbde720c07333f5d5c0aca3b}\label{classCluster_a4cd3cbb3cbde720c07333f5d5c0aca3b}} 
+\index{Cluster@{Cluster}!estructura\_procesadores@{estructura\_procesadores}}
+\index{estructura\_procesadores@{estructura\_procesadores}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{estructura\_procesadores}{estructura\_procesadores}}
+{\footnotesize\ttfamily Bin\+Tree$<$string$>$ Cluster\+::estructura\+\_\+procesadores\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Árbol con la estructura de los procesadores. 
+
+
+
+Definición en la línea 136 del archivo Cluster.\+hh.
+
+\mbox{\Hypertarget{classCluster_a0456efea2e21cfeebda8f61669649a59}\label{classCluster_a0456efea2e21cfeebda8f61669649a59}} 
+\index{Cluster@{Cluster}!procesadores@{procesadores}}
+\index{procesadores@{procesadores}!Cluster@{Cluster}}
+\doxysubsubsection{\texorpdfstring{procesadores}{procesadores}}
+{\footnotesize\ttfamily map$<$string, \mbox{\hyperlink{classProcesador}{Procesador}}$>$ Cluster\+::procesadores\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa ordenado de los procesadores según su identificador. 
+
+
+
+Definición en la línea 138 del archivo Cluster.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Cluster_8hh}{Cluster.\+hh}}\item 
+\mbox{\hyperlink{Cluster_8cc}{Cluster.\+cc}}\end{DoxyCompactItemize}

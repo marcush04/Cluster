@@ -1,0 +1,104 @@
+proc1
+10
+proc11
+100
+proc111
+500
+*
+*
+proc112
+500
+*
+*
+proc12
+100
+proc121
+1000
+*
+*
+proc122
+2000
+*
+*
+4
+1111
+11
+11111
+111
+app proc121 1 500 10
+app proc121 2 200 10
+app proc121 3 300 10
+ipro proc121
+bpp proc121 1
+ipro proc121
+app proc121 1 500 10
+ipro proc121
+bpp proc121 2
+ipro proc121
+app proc121 2 200 10
+ipro proc121
+bpp proc121 3
+ipro proc121
+app proc121 3 300 10
+ipro proc121
+app proc122 31 200 10
+app proc122 32 100 10
+app proc122 33 300 10
+app proc122 34 400 10
+app proc122 35 500 10
+ipro proc122
+bpp proc122 31
+ipro proc122
+bpp proc122 32
+ipro proc122
+app proc122 36 300 10
+ipro proc122
+bpp proc122 36
+ipro proc122
+app proc122 31 200 10
+app proc122 32 100 10
+ipro proc122
+bpp proc122 31
+bpp proc122 33
+bpp proc122 32
+ipro proc122
+app proc122 37 600 10
+ipro proc122
+bpp proc122 35
+ipro proc122
+app proc122 38 1000 10
+ipro proc122
+bpp proc122 38
+ipro proc122
+bpp proc122 37
+bpp proc122 34
+ipro proc122
+app proc122 39 2000 10
+ipro proc122
+bpp proc122 39
+app proc122 40 200 10
+app proc122 41 100 10
+app proc122 42 200 10
+app proc122 43 300 10
+ipro proc122
+bpp proc122 42
+bpp proc122 43
+ipro proc122
+app proc122 44 1600 10
+app proc122 45 100 10 
+ipro proc122
+avanzar_tiempo 15
+ipro proc122
+app proc1 51 3 10
+app proc1 52 2 4
+app proc1 53 1 10
+app proc1 54 2 4
+app proc1 55 2 10
+ipro proc1
+avanzar_tiempo 4
+ipro proc1
+bpp proc1 53
+ipro proc1
+app proc1 56 5 10
+ipro proc1
+fin

@@ -1,0 +1,19 @@
+proc1 10 proc11 100 proc111 500 * * proc112 500 * * proc12 100 proc121
+500 * * proc122 500 * *
+4
+1111
+11
+11111
+111
+app proc121 99 10 10
+app proc121 100 40 40
+app proc121 101 30 30
+app proc121 102 20 20
+bpp proc121 100
+bpp proc121 102
+
+ipc
+cmp proc121
+cmc
+ipc
+fin

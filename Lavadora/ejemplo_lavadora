@@ -1,0 +1,52 @@
+Identificar clases y métodos
+Verbos(suelen ser métodos)
+
+Classes:
+-> Lavadora
+-> Cubeta
+-> Prenda
+
+Lavadora
+-------------------
+Lavadora();
+void depositar(const Prenda& p);
+//Pre: El p.i. está inicializado.
+//Post: El peso total es el peso lavadora + peso prenda
+
+void completar(Cubeta& c);
+//Pre: El p.i. está inicializado.
+//Post:
+
+void inicializar(int peso_max, bool color);
+//Pre: cierto.
+//Post: El p.i. está inicializado con peso máxima ' peso_max' y color 'color'.
+
+void lavar();
+//Pre: El p.i. está inicializado.
+//Post: El p.i. no está inicializado.
+
+int peso_max() const;
+bool color() const;
+int peso() const;
+bool esta_inicializada() const;
+
+void escribir() const;
+
+
+-------------------
+Cubeta
+-------------------
+Cubeta();
+void depositar(const Prenda& p);
+
+void escribir() const;
+
+-------------------
+Prenda
+-------------------
+Prenda();
+Prenda(int peso, bool color);
+int peso() const;
+bool color() const;
+
+void escribir() const;

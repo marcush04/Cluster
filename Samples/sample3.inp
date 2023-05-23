@@ -1,0 +1,51 @@
+proc1 10 proc11 100 proc111 500 * * proc112 500 * * proc12 100 proc121
+500 * * proc122 500 * *
+4
+1111
+11
+11111
+111
+app 111 99 100 100
+
+mc proc111
+proc111
+100
+proc1111
+10
+*
+*
+proc1112
+10
+*
+*
+mc proc121
+proc121
+500
+*
+*
+mc proc121
+proc121
+500
+proc1211
+10
+*
+*
+proc1212
+10
+*
+*
+mc proc1212
+proc1212
+10
+proc12121
+10
+*
+*
+proc12121
+10
+*
+*
+iec
+app proc12121 99 10 10
+ipc
+fin
